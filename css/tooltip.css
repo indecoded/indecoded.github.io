@@ -1,0 +1,68 @@
+#tooltipContainer{
+    position: absolute;
+    display: block;
+    background: rgb(250,250,250);
+    border-radius: 10px;
+    color: black;
+    border: 2px solid black;
+    border-style: solid;
+    padding: 8px;
+    padding-top: 2px;
+    width: 200px;
+    opacity: 0;
+    font: 100 "Helvetica Neue";
+    clear:both;
+}
+
+.tooltipMetricContainer{
+ 
+    clear:both;
+
+}
+
+.tooltipMetricContainer2{
+    margin-bottom: 2px;
+    border-bottom: 1px solid #4588ba;
+    clear:both;
+
+}
+
+.tooltipContentsContainer{
+
+ 
+    clear:both;
+
+
+}
+
+.tooltipMetricTitle{
+	font: "Helvetica Neue";
+
+    font-size: 12px;
+    text-align: center;
+    padding: 1px;
+    clear:both;	
+}
+
+.tooltipTitle{
+font: 500 "Helvetica Neue"
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #4588ba;
+
+}
+.tooltipMetricName{
+    float: left;
+    font-size: 11px;
+}
+.tooltipMetricName2{
+    float: left;
+    font-size: 11px;
+}
+
+.tooltipMetricValue, .tooltipMetricValue2 , .tooltipMetricValue3 , .tooltipMetricValue4 {
+    float: right;
+    font-size: 12px;
+}

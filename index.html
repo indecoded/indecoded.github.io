@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8">
+<head>
+<link rel="stylesheet" type="text/css" href="css/tooltip.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+</head>
+<body>
+<!--iashris speaks: Hello, Mr. Sneaky Visitor! Good luck trying to figure out my horribly written code. So that you don't end up browsing the code and end up crying, let me be of some help to you. 
+
+NO, the computation doesn't happen on the go. The distortion data is saved as .html files. This technique of depicting information through distorted maps isn't my idea (who would've thought, right?). These maps are called cartograms and there is a nice little software that I used called ScapeToad which neatly twists a shapefile with attached data to make these mutant cartograms. I used QGIS, a GIS software to do all the housekeeping stuff like cleaning the data, interchange between GeoJSON and Shapefile formats and so on. Finding the shapefile for India with Jammu and Kashmir intact (the way India wants it) was difficult but I managed it somehow.
+
+The entire code isn't written by me. Almost 60% of it is from a tutorial on making cartograms suggested by my good friend Bishnu.-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49711524-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--Gotta track you, sneaky fella! Ashris says hoohahahahaha-->
+<div id="cover">Sorry, the web application is not optimized for smaller screens.</div>
+
+
+<div class="tooltip">
+	<p class="tooltip2">United States</p>
+	<div class="tooltip3">GDP: <span class="quantity">$36.3tr</span></div>
+	<div class="tooltip4">34% of world GDP</div>
+</div>
+
+
+
+
+<div id="svghere">
+
+	<svg version="1.1" viewBox="0 0 1040 600" preserveAspectRatio="xMinYMin meet" class="content" type="image/svg+xml" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<text class="pagetitle"></text>
+		<text class="amount summary"></text>
+		<text class="total summary linkhere">Approximate Figure</text>
+	</svg>
+</div>
+<div class="overlay" style="z-index:99">
+<div class="leftpanel">
+<div class="introblock">
+INDECODED
+</div>
+<div class="txtbox">
+INDECODED is a data visualization project that uses open source data to illustrate India in a more striking manner than textual data.Humans are visual thinkers. Our brains can detect even minor aberrations in well perceived images. <a href="https://en.wikipedia.org/wiki/Cartogram">Cartograms</a> present subtle information, usually overlooked by us through a rich visual stimulus.<br/> The application is bulky and hence may take around 20 seconds to load, so kindly be patient for the interface to load.
+<br/>
+<em>(NB: The map does not show the Union Territories and Telangana as the data was not available of the said regions in Census 2011.)</em> 
+</div> 
+<div class="footer">
+Made with <span style="color:#f55556">&#10084;</span> by iashris
+</div>
+</div>
+</div>
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/d3.geo.projection.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
