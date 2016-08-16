@@ -496,7 +496,7 @@ var startradius=10;
 			d3.selectAll(".summary")
 				.style("opacity",0);
 			$(".linkhere").html("");	
-			$(".txtbox").html('INDECODED is a data visualization project that uses open source data to illustrate India in a more striking manner than textual data.Humans are visual thinkers. Our brains can detect even minor aberrations in well perceived images. <a href="https://en.wikipedia.org/wiki/Cartogram">Cartograms</a> present subtle information, usually overlooked by us through a rich visual stimulus.<br/> The application is bulky and hence may take around 20 seconds to load, so kindly be patient for the interface to load.<br/><em>(NB: The map does not show the Union Territories and Telangana as the data was not available of the said regions in Census 2011.)</em> ');
+			$(".txtbox").html('INDECODED is a data visualization project that uses open source data to illustrate India in a more striking manner than textual data. Humans are visual thinkers. Our brains can detect even minor aberrations in familiar images. <a href="https://en.wikipedia.org/wiki/Cartogram">Cartograms</a> present subtle information, usually overlooked by us.<br/> The application is may take around 20 seconds to load, so kindly be patient for the interface to load.<br/><em>(NB: The map does not show the Union Territories and Telangana as the data was not available of the said regions in Census 2011.)</em>');
 	}
 	function literacy(){
 			tempmap.data(polygon2.features).transition().duration(2000).attr("d", pathn).style("fill", function(d){
