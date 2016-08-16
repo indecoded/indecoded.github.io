@@ -716,7 +716,7 @@ var startradius=10;
 		val2=d.Rank;
 		if(val2==1 || val2==21){var prefix='st';}
 		else if(val2==2 || val2==22) {var prefix='nd';}
-		else if(val2==3){var prefix='rd';}
+		else if(val2==3 || val2==23){var prefix='rd';}
 		else{var prefix='th';}
 		
 		return [val, val2 + prefix+" of all states"];
