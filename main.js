@@ -519,11 +519,11 @@ var startradius=10;
 			d3.select(".pagetitle")
 				.text("National Total GDP");
 			d3.select(".amount")
-				.text("INR 12547735 crores");
+				.text("INR 12,547,735 crores");
 			$(".linkhere").html('<a href="https://en.wikipedia.org/wiki/List_of_Indian_states_by_GDP">Source</a>');
 			$(".txtbox").html('Gross Domestic Product is the monetary value of all the finished goods and services produced within the borders of a region in a specific time period. Maharashtra places itself at the first position, primarily because of Mumbai that itself produces 1/20th of Indian GDP. The southern states swell up while the east shrinks. Intuitively, larger states swell up more than smaller ones because of absolute basis of GDP which will reverse when GDP/Capita is calculated.');
-		
-		
+
+
 	}
 	function pop(){
 			tempmap.data(polygon4.features).transition().duration(2000).attr("d", pathn).style("fill", function(d){
@@ -581,7 +581,7 @@ var startradius=10;
 			d3.select(".pagetitle")
 				.text("National Riot Frequency");
 			d3.select(".amount")
-				.text("6.2 riots/100000 population");	
+				.text("6.2 riots per 100,000 people");
 			$(".linkhere").html('<a href="https://en.wikipedia.org/wiki/Indian_states_and_union_territories_ranked_by_riots_rate">Source</a>');
 			$(".txtbox").html('Riots aren\'t an uncommon event in our democracy. The South and the East have taken up most of the space with West and Center shrinking to a quarter their original sizes.');
 
@@ -616,7 +616,7 @@ var startradius=10;
 	                   	return colors[d.properties.Rank];});
 
 			d3.select(".pagetitle")
-				.text("Money Expenditure on Alcohol");
+				.text("Monthly Expenditure on Alcohol");
 			d3.select(".amount")
 				.text("INR 20.26");		
 			$(".linkhere").html('<a href="http://blogs.wsj.com/indiarealtime/2015/12/23/which-indian-states-drink-and-smoke-the-most/">Source</a>');
@@ -654,46 +654,64 @@ var startradius=10;
 			d3.select(".pagetitle")
 				.text("Sample Space");
 			d3.select(".amount")
-				.text("485136 students");		
+				.text("4,85,136 students");
 			$(".linkhere").html('<a href="www.jeeadv.ac.in/pdf/JEE-2011-Report.pdf">Source</a>');
 			$(".txtbox").html('This cartogram shows the success rates of every state in the famed IITJEE. Although this data only takes IITJEE 2011 into consideration, the distribution is consistent across years. (Take this with a pinch of salt) The data validates the occurence of coaching centres contributing to most of the IITians. Andhra Pradesh and Rajasthan occupy half of the area while the North East shrinks to the size of Jharkhand.');
 
-	}  	
-	
+	}
+
+
+        /**
+         * Accepts an integer as an argument and returns a string with commas
+         * inserted according to the Indian numbering system
+         *
+         * i.e:
+         *
+         * convert(100000)
+         * // => "1,00,000"
+         *
+         * convert(10000000)
+         * // => "1,00,00,000"
+         */
+        function convert(x) {
+          return x.toString().substr()
+          .replace(/\B(?=\d{3}$)/g, ",")
+          .replace(/\B(?=(\d{2})+(?!\d),)/g, ",")
+        }
 
 	function updatevalue(d){
 		var val;
 		var val2
-	
+
 		if (selectedvariable==1) {return ["",""];}
 		else if (selectedvariable==2) {
 			if (d.Indata_Lit == 0) {val = "Total wealth: N/A ";}
 			else if (d.Indata_Lit  > 0) {val = "Literacy: " + d.Indata_Lit + "%";}
-			else {val = "error";}	
+			else {val = "error";}
 		}
 		else if (selectedvariable==3) {
 			if (d.GDP == 0) {val = "GDP: N/A ";}
-			else if (d.GDP > 0) {val = "GDP: INR " + parseInt(d.GDP*100)*1000 + " crores";}
-			else {val = "error";}		
+			else if (d.GDP > 0) {val = "GDP: INR " + convert(parseInt(d.GDP*100)*1000) + " crores";}
+			else {val = "error";}
 		}
 		else if (selectedvariable==4) {
 			if (d.pop == 0) {val = "Population: N/A ";}
-			else if (d.pop > 0) {val = "Population: " + parseInt(1000*d.pop)/100 + " lakh people";}
+			else if (d.pop > 0) {val = "Population: " + convert(parseInt(1000*d.pop)/100) + " lakh people";}
 			else {val = "error";}
 		}
 		else if (selectedvariable==5) {
 			if (d.Indata_Per == 0) {val = "GDP/PerCapita: N/A ";}
-			else {val = "GDP/Capita: INR " + d.Indata_Per + " rupees";}
+			else {val = "GDP/Capita: INR " + convert(d.Indata_Per) + " rupees";}
 		}
 		else if (selectedvariable==6) {
 			if (d.hdi == 0) {val = "HDI: N/A ";}
-			else {val = "HDI: " + parseInt(d.hdi*1000)/1000;}
+			else {val = "HDI: " + d.hdi.toFixed(3);}
 		}
 		else if(selectedvariable==7){
 			val = "Medals: " + d.Indata_Med;
 		}
 		else if (selectedvariable==8) {
-			val="Riots/100,000 people: "+d.Indata_Rio;
+			val=d.Indata_Rio + " riots per 100,000 people";
 		}
 		else if (selectedvariable==9) {
 			val="Forested Area: "+d.Indata_For+"%";
@@ -702,7 +720,7 @@ var startradius=10;
 			val="Vehicles/1000 people: "+d.Indata_Veh;
 		}
 		else if (selectedvariable==11) {
-			val="Monthly Alcohol Expenditure: INR "+d.Indata_INR;
+			val="All India Monthly Alcohol Expenditure: INR "+d.Indata_INR;
 		}
 		else if (selectedvariable==12) {
 			val="Time per Session: "+parseInt(d.Indata_Por)+" minutes and "+parseInt(d.Indata_Por*100)%100+" seconds";
